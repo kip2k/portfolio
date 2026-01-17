@@ -49,7 +49,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     overflow-x: auto; /* Enable horizontal scrolling */
-  overflow-y: hidden; /* Prevent vertical scroll inside the gallery container */
+    overflow-y: hidden; /* Prevent vertical scroll inside the gallery container */
     white-space: nowrap; /* Ensure items don't wrap onto a new line */
     padding: 20px 20px; /* Add padding to the top, bottom, left, and right */
     gap: 20px; /* Add gap between the items */
