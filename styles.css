@@ -1,0 +1,291 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&family=Staatliches&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Libre Franklin', Arial, sans-serif;
+    background-color: #f5f3ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 6em;
+    margin: 0;
+    color: #0B1215;
+    font-family: 'Staatliches';
+    transition: transform 0.3s;
+    display: inline-block;
+    position: relative;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin: 20px 0 60px;
+}
+
+.h1-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    position: relative; /* Ensure the ::after is positioned relative to the link */
+}
+
+.h1-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px; /* Adjust this value to set the distance between text and underline */
+    height: 2px;
+    background-color: #0B1215;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease;
+}
+
+.h1-link:hover::after {
+    transform: scaleX(1);
+}
+
+.h1-link:hover h1 {
+    transform: scale(1.1); /* Zoom to 110% */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1em;
+    color: #0B1215;
+    text-decoration: none;
+    border: 2px solid #0B1215;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: #0B1215;
+    color: #F4F1EB;
+}
+
+/* Styles for viz.html */
+.menubar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #f5f3ef;
+    padding: 20px 40px; /* Add padding to create space around the menubar */
+    font-family: 'Staatliches', cursive;
+    position: absolute;
+    top: 0;
+    left: -20px;
+}
+
+.menubar a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #0B1215;
+    transition: transform 0.3s ease; /* Only apply transform effect */
+    position: relative; /* Required for the ::after pseudo-element */
+}
+
+.menubar a:hover {
+    transform: scale(1.1); /* Zoom to 110% */
+}
+.menubar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px; /* Adjust this value to set the distance between text and underline */
+    height: 1px;
+    background-color: #0B1215;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.menubar a:hover::after {
+    transform: scaleX(1);
+}
+.container {
+    text-align: center;
+    margin-top: 80px; /* Adjust margin to create space below the menubar */
+}
+
+.intro-text {
+    font-size: 1em;
+    color: #0B1215;
+    margin-top: 50px;
+    margin-bottom: 30px; /* Adjust margin to create space between the paragraph and the buttons */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust gap to control space between buttons */
+}
+
+.viz-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    border: 2px solid;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #0B1215;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+    position: relative;
+    background-color: #f5f3ef;
+}
+
+.viz-button#tableau {
+    border-color: #0B1215;
+    color: #0B1215;
+}
+
+.viz-button#python {
+    border-color: #0B1215;
+    color: #0B1215;
+}
+
+.viz-button span {
+    margin-bottom: 20px;
+}
+
+.arrow {
+    font-size: 2em;
+    opacity: 0;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.viz-button:hover .arrow {
+    opacity: 1;
+}
+
+.viz-button:hover {
+    transform: scale(1.05);
+    background-color: transparent;
+}
+
+.viz-button:hover#tableau {
+    background-color: #0B1215;
+    color: #f5f3ef;
+}
+
+.viz-button:hover#python {
+    background-color: #0B1215;
+    color: #f5f3ef;
+}
+
+.gallery-container {
+    margin: 0 auto;
+    max-width: 1000px; /* Adjust the maximum width of the container */
+    padding-top: 20px; /* Ensure space from the top */
+    padding-bottom: 20px; /* Added padding to the bottom */
+}
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 20px 20px; /* Add padding to the top, bottom, left and right */
+    gap: 20px; /* Add gap between the items */
+}
+
+.gallery-item {
+    display: block;
+    width: 300px;
+    text-decoration: none;
+    padding: 20px;
+    color: #0B1215;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.description h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-family: 'Staatliches';
+    color: #0B1215;
+    font-weight: bold;
+}
+
+.description p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #555;
+}
+.sub p {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #999;
+}
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+.column {
+    flex: 1;
+}
+
+.middle-column {
+    flex: 2.5;
+    padding: 0 20px;
+}
+/* Link styles */
+a {
+    color: black; /* Set link color to black */
+    text-decoration: underline; /* Always underline links */
+}
+
+a:visited {
+    color: #555; /* Set visited link color to black */
+}
+
+a:hover {
+    color: black; /* Ensure hover link color is also black */
+}
+
+a:active {
+    color: black; /* Ensure active link color is also black */
+}
