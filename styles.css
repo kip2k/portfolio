@@ -180,6 +180,11 @@ h1 {
     color: #00008B; /* DarkBlue */
 }
 
+.viz-button#wmedia {
+    border-color: #00008B; /* DarkBlue */
+    color: #00008B; /* DarkBlue */
+}
+
 
 
 .viz-button span {
@@ -245,6 +250,31 @@ h1 {
 }
 
 .viz-button:hover#mgtproject::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(70, 130, 180, 0.86); /* SteelBlue overlay with 50% opacity */
+    border-radius: 18px; /* Match the button's border-radius */
+    z-index: -1;
+}
+
+.viz-button:hover#wmedia > * {
+    position: relative;
+    z-index: 1;
+}
+
+.viz-button:hover#wmedia {
+    background-image: url('https://images.klipfolio.com/website/public/f7ba478a-3b9c-4329-b2fc-6253c9a1b1ae/dashboard-examples-linkedin_0.png');
+    background-size: cover;
+    background-position: center;
+    color: #F0F8FF; /* AliceBlue */
+    border-color: #4682B4; /* SteelBlue */
+}
+
+.viz-button:hover#wmedia::before {
     content: '';
     position: absolute;
     top: 0;
