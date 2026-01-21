@@ -1,0 +1,164 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&family=Staatliches&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Libre Franklin', Arial, sans-serif;
+    background-color: #F0F8FF; /* AliceBlue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-top: 80px;
+}
+
+.intro-text {
+    font-size: 1em;
+    color: #00008B; /* DarkBlue */
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.viz-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    border: 2px solid;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #00008B; /* DarkBlue */
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+    position: relative;
+    background-color: #F0F8FF; /* AliceBlue */
+}
+
+.viz-button#amazon {
+    border-color: #00008B; /* DarkBlue */
+    color: #00008B; /* DarkBlue */
+}
+
+.viz-button#ogilvy {
+    border-color: #00008B; /* DarkBlue */
+    color: #00008B; /* DarkBlue */
+}
+
+.viz-button span {
+    margin-bottom: 20px;
+    font-family: 'Staatliches', cursive;
+    font-size: 1.5em;
+}
+
+.arrow {
+    font-size: 2em;
+    opacity: 0;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.viz-button:hover .arrow {
+    opacity: 1;
+}
+
+.viz-button:hover {
+    transform: scale(1.05);
+    background-color: transparent;
+}
+
+.viz-button:hover#amazon {
+    background-image: url('https://assets.aboutamazon.com/74/d8/03892b1047d4bc28efce443ba321/about-amazon-hero-sustainability-hero-4.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #F0F8FF; /* AliceBlue */
+    border-color: #4682B4; /* SteelBlue */
+}
+
+.viz-button:hover#amazon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(70, 130, 180, 0.86); /* SteelBlue overlay */
+    border-radius: 18px;
+    z-index: -1;
+}
+
+.viz-button:hover#amazon > * {
+    position: relative;
+    z-index: 1;
+}
+
+.viz-button:hover#ogilvy {
+    background-image: url('https://cloudfront-eu-central-1.images.arcpublishing.com/williamreed/Y4LK652JBVI7DJPMWJTHV6QZAU.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #F0F8FF; /* AliceBlue */
+    border-color: #4682B4; /* SteelBlue */
+}
+
+.viz-button:hover#ogilvy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(70, 130, 180, 0.86); /* SteelBlue overlay */
+    border-radius: 18px;
+    z-index: -1;
+}
+
+.viz-button:hover#ogilvy > * {
+    position: relative;
+    z-index: 1;
+}
+
+.viz-button[data-title]:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 1;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+}
+
+.footer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.back-arrow {
+    font-size: 2em;
+    color: #00008B;
+    text-decoration: none;
+}

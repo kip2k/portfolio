@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Libre Franklin', Arial, sans-serif;
-    background-color: #f5f3ef;
+    background-color: #F0F8FF; /* AliceBlue */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,12 +14,15 @@ body {
 
 .container {
     text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 h1 {
     font-size: 6em;
     margin: 0;
-    color: #0B1215;
+    color: #00008B; /* DarkBlue */
     font-family: 'Staatliches';
     transition: transform 0.3s;
     display: inline-block;
@@ -28,8 +31,17 @@ h1 {
 
 .subtitle {
     font-size: 1.2em;
-    color: #666;
-    margin: 20px 0 60px;
+    color: #708090; /* SlateGray */
+    margin: 20px 0;
+}
+
+.subtitle-top {
+    margin-bottom: 40px;
+}
+
+.subtitle-bottom {
+    margin-top: 40px;
+    margin-bottom: 60px;
 }
 
 .h1-link {
@@ -46,7 +58,7 @@ h1 {
     right: 0;
     bottom: -5px; /* Adjust this value to set the distance between text and underline */
     height: 2px;
-    background-color: #0B1215;
+    background-color: #00008B; /* DarkBlue */
     transform: scaleX(0);
     transform-origin: bottom left;
     transition: transform 0.3s ease;
@@ -70,16 +82,17 @@ h1 {
     display: inline-block;
     padding: 15px 30px;
     font-size: 1em;
-    color: #0B1215;
+    color: #00008B; /* DarkBlue */
     text-decoration: none;
-    border: 2px solid #0B1215;
+    border: 2px solid #00008B; /* DarkBlue */
     border-radius: 10px;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .button:hover {
-    background-color: #0B1215;
-    color: #F4F1EB;
+    background-color: #4682B4; /* SteelBlue */
+    color: #F0F8FF; /* AliceBlue */
+    border-color: #4682B4; /* SteelBlue */
 }
 
 /* Styles for viz.html */
@@ -87,7 +100,7 @@ h1 {
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: #f5f3ef;
+    background-color: #F0F8FF; /* AliceBlue */
     padding: 20px 40px; /* Add padding to create space around the menubar */
     font-family: 'Staatliches', cursive;
     position: absolute;
@@ -98,7 +111,7 @@ h1 {
 .menubar a {
     text-decoration: none;
     font-size: 20px;
-    color: #0B1215;
+    color: #00008B; /* DarkBlue */
     transition: transform 0.3s ease; /* Only apply transform effect */
     position: relative; /* Required for the ::after pseudo-element */
 }
@@ -113,7 +126,7 @@ h1 {
     right: 0;
     bottom: -5px; /* Adjust this value to set the distance between text and underline */
     height: 1px;
-    background-color: #0B1215;
+    background-color: #00008B; /* DarkBlue */
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 0.3s ease;
@@ -129,7 +142,7 @@ h1 {
 
 .intro-text {
     font-size: 1em;
-    color: #0B1215;
+    color: #00008B; /* DarkBlue */
     margin-top: 50px;
     margin-bottom: 30px; /* Adjust margin to create space between the paragraph and the buttons */
 }
@@ -150,25 +163,29 @@ h1 {
     border: 2px solid;
     border-radius: 20px;
     text-decoration: none;
-    color: #0B1215;
+    color: #00008B; /* DarkBlue */
     font-size: 1.2em;
     transition: all 0.3s ease;
     position: relative;
-    background-color: #f5f3ef;
+    background-color: #F0F8FF; /* AliceBlue */
 }
 
-.viz-button#tableau {
-    border-color: #0B1215;
-    color: #0B1215;
+.viz-button#kaggle {
+    border-color: #00008B; /* DarkBlue */
+    color: #00008B; /* DarkBlue */
 }
 
-.viz-button#python {
-    border-color: #0B1215;
-    color: #0B1215;
+.viz-button#mgtproject {
+    border-color: #00008B; /* DarkBlue */
+    color: #00008B; /* DarkBlue */
 }
+
+
 
 .viz-button span {
     margin-bottom: 20px;
+    font-family: 'Staatliches', cursive;
+    font-size: 1.5em;
 }
 
 .arrow {
@@ -189,15 +206,57 @@ h1 {
     background-color: transparent;
 }
 
-.viz-button:hover#tableau {
-    background-color: #0B1215;
-    color: #f5f3ef;
+.viz-button:hover#kaggle {
+    background-image: url('https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_xl_2x/f_auto/primary/yhj1yptbuf3uy3qj7wu7');
+    background-size: cover;
+    background-position: center;
+    color: #F0F8FF; /* AliceBlue */
+    border-color: #4682B4; /* SteelBlue */
 }
 
-.viz-button:hover#python {
-    background-color: #0B1215;
-    color: #f5f3ef;
+.viz-button:hover#kaggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(70, 130, 180, 0.86); /* SteelBlue overlay with 90% opacity */
+    border-radius: 18px; /* Match the button's border-radius */
+    z-index: -1;
 }
+
+.viz-button:hover#kaggle > * {
+    position: relative;
+    z-index: 1;
+}
+
+.viz-button:hover#mgtproject > * {
+    position: relative;
+    z-index: 1;
+}
+
+.viz-button:hover#mgtproject {
+    background-image: url('https://cdn.shopify.com/app-store/listing_images/5166e8cccbe41e2a3e814e478c2605b6/icon/CPv_h_2D_I4DEAE=.png');
+    background-size: cover;
+    background-position: center;
+    color: #F0F8FF; /* AliceBlue */
+    border-color: #4682B4; /* SteelBlue */
+}
+
+.viz-button:hover#mgtproject::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(70, 130, 180, 0.86); /* SteelBlue overlay with 50% opacity */
+    border-radius: 18px; /* Match the button's border-radius */
+    z-index: -1;
+}
+
+
 
 .gallery-container {
     margin: 0 auto;
@@ -213,19 +272,18 @@ h1 {
 
 .gallery {
     display: flex;
-    justify-content: space-between;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    padding: 20px 20px; /* Add padding to the top, bottom, left and right */
-    gap: 20px; /* Add gap between the items */
+    justify-content: center;
+    padding: 20px 0;
+    gap: 20px; /* Adds space between items */
 }
 
 .gallery-item {
-    display: block;
-    width: 300px;
+    width: 300px; /* Explicitly set width for each item */
     text-decoration: none;
     padding: 20px;
-    color: #0B1215;
+    color: #00008B; /* DarkBlue */
     transition: transform 0.3s ease;
+    text-align: center; /* Center the text inside */
 }
 
 .gallery-item:hover {
@@ -245,14 +303,14 @@ h1 {
     margin: 0;
     font-size: 1.2em;
     font-family: 'Staatliches';
-    color: #0B1215;
+    color: #00008B; /* DarkBlue */
     font-weight: bold;
 }
 
 .description p {
     margin: 5px 0;
     font-size: 1em;
-    color: #555;
+    color: #708090; /* SlateGray */
 }
 .sub p {
     font-size: 0.9em;
@@ -269,23 +327,81 @@ h1 {
 }
 
 .middle-column {
-    flex: 2.5;
+    flex: 2;
     padding: 0 20px;
 }
 /* Link styles */
 a {
-    color: black; /* Set link color to black */
+    color: #00008B; /* DarkBlue */
     text-decoration: underline; /* Always underline links */
 }
 
 a:visited {
-    color: #555; /* Set visited link color to black */
+    color: #708090; /* SlateGray */
 }
 
 a:hover {
-    color: black; /* Ensure hover link color is also black */
+    color: #4682B4; /* SteelBlue */
 }
 
 a:active {
-    color: black; /* Ensure active link color is also black */
+    color: #00008B; /* DarkBlue */
+}
+
+.about-p {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.image-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-column img {
+    width: 100%;
+    border-radius: 10px;
+    animation: floatIn 1s ease-out;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.back-arrow {
+    font-size: 2em;
+    color: #00008B;
+    text-decoration: none;
+}
+
+.viz-button[data-title]:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 1;
+    margin-bottom: 5px;
+    font-size: 0.8em;
 }
