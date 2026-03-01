@@ -185,6 +185,11 @@ h1 {
     color: #00008B; /* DarkBlue */
 }
 
+.viz-button#sqlproject {
+    border-color: #00008B; /* DarkBlue */
+    color: #00008B; /* DarkBlue */
+}
+
 
 
 .viz-button span {
@@ -275,6 +280,31 @@ h1 {
 }
 
 .viz-button:hover#wmedia::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(70, 130, 180, 0.86); /* SteelBlue overlay with 50% opacity */
+    border-radius: 18px; /* Match the button's border-radius */
+    z-index: -1;
+}
+
+.viz-button:hover#sqlproject > * {
+    position: relative;
+    z-index: 1;
+}
+
+.viz-button:hover#sqlproject {
+    background-image: url('https://www.socialchamp.com/blog/wp-content/uploads/2023/12/Content-Blog-Banner_Q4-2023_1125x600_34_YouTube-Stats.png');
+    background-size: cover;
+    background-position: center;
+    color: #F0F8FF; /* AliceBlue */
+    border-color: #4682B4; /* SteelBlue */
+}
+
+.viz-button:hover#sqlproject::before {
     content: '';
     position: absolute;
     top: 0;
@@ -434,4 +464,8 @@ a:active {
     z-index: 1;
     margin-bottom: 5px;
     font-size: 0.8em;
+}
+
+.youtube-link:hover {
+  color: #ff0000;
 }
