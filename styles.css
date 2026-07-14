@@ -1,15 +1,22 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&family=Staatliches&display=swap');
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Libre Franklin', Arial, sans-serif;
     background-color: #F0F8FF; /* AliceBlue */
+    min-height: 100vh;
+}
+
+.home-body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .container {
@@ -89,6 +96,31 @@ h1 {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.link-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+  margin-bottom: 16px;
+}
+
+.ghost-btn {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0d1b6e;
+  text-decoration: none;
+  padding: 6px 4px;
+  border: none;
+  border-bottom: 1px solid rgba(13, 27, 110, 0.35);
+  transition: border-color .15s ease;
+}
+
+.ghost-btn:hover {
+  border-bottom-color: #0d1b6e;
+}
+
+
 .button:hover {
     background-color: #4682B4; /* SteelBlue */
     color: #F0F8FF; /* AliceBlue */
@@ -135,9 +167,9 @@ h1 {
 .menubar a:hover::after {
     transform: scaleX(1);
 }
-.container {
+.viz-container {
     text-align: center;
-    margin-top: 80px; /* Adjust margin to create space below the menubar */
+    margin-top: 80px;
 }
 
 .intro-text {
@@ -147,10 +179,10 @@ h1 {
     margin-bottom: 30px; /* Adjust margin to create space between the paragraph and the buttons */
 }
 
-.button-container {
+.viz-button-container {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Adjust gap to control space between buttons */
+    gap: 20px;
 }
 
 .viz-button {
@@ -377,19 +409,25 @@ h1 {
     font-style: italic;
     color: #999;
 }
+
 .content-wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 0px;
 }
 .column {
-    flex: 1;
+    flex: 1 1 300px;
+    min-width: 0;
 }
 
 .middle-column {
-    flex: 2;
+    flex: 2 1 400px;
+    min-width: 0;
+    max-width: 800px;
     padding: 0 20px;
 }
+
 /* Link styles */
 a {
     color: #00008B; /* DarkBlue */
@@ -418,12 +456,14 @@ a:active {
 .image-column {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .image-column img {
     width: 100%;
     border-radius: 10px;
+    position: sticky;
+    top: 100px;
     animation: floatIn 1s ease-out;
 }
 
@@ -468,4 +508,17 @@ a:active {
 
 .youtube-link:hover {
   color: #ff0000;
+}
+
+@media (max-width: 700px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .middle-column {
+        padding: 0 10px;
+    }
+    h1 {
+        font-size: 3.5em;
+    }
 }
